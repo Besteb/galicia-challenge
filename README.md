@@ -114,34 +114,9 @@ Interactuá con el agente enviando una petición POST.
 
 A continuación, un diagrama de componentes que ilustra cómo interactúan las distintas partes del sistema:
 ![alt text](image.png)
-```mermaid
-componentDiagram
-    actor Usuario
-    package "Agent Service" {
-        component [AgentController] as Controller
-        component [AgentService] as AgentSvc
-        component [LLMService] as LLMSvc
-        component [CurrencyService] as CurrencySvc
-        component [ChatHistoryService] as ChatSvc
-        component [CurrencyInfoClient] as FeignClient
-        database "H2 Database" as DB
-    }
-    
-    component "Google GenAI" as GenAI
-    component "DolarApi.com" as ExternalAPI
 
-    Usuario --> Controller : POST /chat
-    Controller --> AgentSvc
-    AgentSvc --> ChatSvc : Gestionar Estado
-    AgentSvc --> LLMSvc : Interpretar Intención
-    AgentSvc --> CurrencySvc : Consultar Datos
-    
-    LLMSvc --> GenAI : Generar Respuesta
-    CurrencySvc --> FeignClient
-    FeignClient --> ExternalAPI : HTTP GET /dolares
-    
-    ChatSvc ..> DB : Persistir Chats
-```
+Y un diagrama de flujo que ilustra el comportamiento standard
+![alt text](image-1.png)
 
 ## 📂 Estructura del Proyecto
 
