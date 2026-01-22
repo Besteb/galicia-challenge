@@ -170,6 +170,8 @@ Interactuá con el agente enviando una petición POST.
 ```
 
 ## 🏗️ Arquitectura
+Diagrama de arquitectura
+![alt text](<Arquitectura de Sistema Conversacional Distribuido.drawio.png>)
 
 A continuación, un diagrama de componentes que ilustra cómo interactúan las distintas partes del sistema:
 ![alt text](image.png)
